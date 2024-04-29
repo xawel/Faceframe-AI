@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+ <html >
+    <head>
+      <link rel = "icon" href = "C:\Users\Hp\Desktop\Faceframe AI\finalogo.png">
+        <meta charset="utf-8">
+        <title> Faceframe </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<!-- Other stylesheets -->
+<link rel="stylesheet" href="engine1/style.css" />
+
+<!-- jQuery -->
+<script type="text/javascript" src="engine1/jquery.js"></script>
+
+<style>
+  
+
+ body{
+    margin: 0;
+    padding: 0;
+   
+   font-family: 'Montserrat', sans-serif;
+   background-color: #E3E3E3;
+   overflow-x: hidden;
+
+  }
+/* Apply a box-sizing reset for all elements */
+
+header{
+    margin: 0;
+   padding: 0;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+  
+
+header { 
+
+  
+
+  background-color: #003333; /* Background color for the navigation bar */
+  color: #fff; /* Text color for the navigation bar */
+  padding-bottom: 100%;
+  padding-right: -20px;
+  padding-top: 100%;
+  padding: 40px; 
+  display: flow; 
+  justify-content: space-between;
+  align-items: center;
+  margin-right: -40px ;
+  margin-left: -40px ;
+  margin-top: -15px;
+  margin-bottom: -20px;
+
+}
+
+.logo img {
+  max-height: 100px; /* Adjust the logo's max height */
+  float: right;
+  padding-right: 3%;
+  margin-top: -30px;
+
+}
+
+.menu ul {
+  display: flex;
+}
+
+.menu li {
+  margin: 0 30px; /* Add margin between menu items */
+  display: inline;
+}
+
+.menu a {
+  text-decoration: none; /* Remove underline from links */
+  color: #fff; /* Text color for links */
+ 
+  font-size: 25px;
+
+  font-family: 'Gabarito';
+}
+
+.menu ul li:nth-child(4) a {
+    background-color: #fff; /* Background color for the "Download" link */
+    padding: 8px 16px; /* Adjust padding for the link */
+    border-radius: 5px; /* Add rounded corners */
+    color: #333; /* Text color */
+    text-decoration: none; /* Remove underline */
+}
+
+
+/*Slideshow*/
+.container {
+   padding: 2rem;
+   width: 80%; /* Adjust the width as needed */
+   margin: 0 auto;
+
+}
+
+.slider-wrapper {
+   position: relative;
+   max-width: 80%;
+   margin: 0 auto;
+}
+
+
+
+
+.slider {
+   max-width: 100%;
+   display: flex;
+   aspect-ratio: 16 / 9;
+   overflow-x: auto;
+   scroll-snap-type: x mandatory;
+   scroll-behavior: smooth;
+   box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+   border-radius: 0.5rem;
+   -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+   scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.slider::-webkit-scrollbar {
+   display: none;
+}
+
+.slider img {
+   flex: 1 0 100%;
+   scroll-snap-align: start;
+   object-fit: cover;
+}
+
+.slider-nav {
+   display: flex;
+   column-gap: 1rem;
+   position: absolute;
+   bottom: 1.25rem;
+   left: 50%;
+   transform: translateX(-50%);
+   z-index: 1;
+}
+
+.slider-nav a {
+   width: 0.5rem;
+   height: 0.5rem;
+   border-radius: 50%;
+   background-color: #fff;
+   opacity: 0.75;
+   transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+   opacity: 1;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #003333;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+    }
+
+#myBtn:hover {
+  background-color: #2a3b3b;
+}
+ /* Style for More Info section */
+#more-info {
+  padding: 50px; /* Add padding for content */
+  font-family: 'Montserrat', sans-serif; /* Use the Montserrat font */
+  color: #003333; /* Text color */
+} */
+
+/* Style for both More Info and Support sections */
+.section {
+  padding: 50px;
+  font-family: 'Montserrat', sans-serif;
+  color: #003333;
+}
+
+/* Style for section header */
+.section-header {
+  text-align: center;
+  margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+.section-header h2 {
+  font-size: 2.5em;
+  margin-top: 0;
+}
+
+/*OUR TEAM*/
+
+ .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em 1em;
+    text-align: center;
+  }
+
+  .column {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 0.5em;
+  }
+
+  h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 3.5em;
+    color: #003333;
+  }
+
+  .card {
+    box-shadow: none;
+    display: inline-block;
+    border-radius: 0.5em;
+    padding: 20%;
+    color: #fff;
+    transition: 0.3s;
+    background-color: #003333;
+    width: 100%;
+  }
+
+  .card .img-container {
+    width: 5em;
+    height: 5em;
+    background-color: #fff;
+    padding: 0.5em;
+    border-radius: 50%;
+    margin: 0 auto 1em auto;
+  }
+
+  .card img {
+    width: 100%;
+    border-radius: 50%;
+  }
+
+  .card h3 {
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .card p {
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0.5em 0 1em 0;
+    letter-spacing: 2px;
+  }
+
+  .icons {
+    color: ghostwhite;
+    width: 50%;
+    min-width: 180px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.2em;
+  }
+
+  .card:hover {
+    background:#75BF9A;
+    color: #ffffff;
+  }
+
+  .card:hover .img-container {
+    transform: scale(1.15);
+  }
+
+  @media screen and (min-width: 768px) {
+    section {
+      padding: 1em 2em;
+    }
+  }
+
+
+
+/* Style for horizontal line in More Info section */
+hr.support, hr.about-us {
+  border: 0;
+  height: 1px;
+  background-color: #ddd;
+  margin: 20px 0;
+  width: 100%; /* Make the line span the full width */
+}
+#download {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  /*padding: 80px;
+  margin-right: 35px;*/
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+ }
+
+/* Style for horizontal line in Support section */
+#support hr {
+  border: 0;
+  height: 1px;
+  background-color: #ddd;
+  margin: 20px 0;
+  width: 100%; /* Make the line span the full width */
+}
+
+/* Style for horizontal line in More Info section */
+hr.support, hr.about-us {
+  border: 0;
+  height: 1px;
+  background-color: #003333;
+  margin: 20px 0;
+  width: 100%; /* Make the line span the full width */
+}
+
+/* Style for Download section */
+#download {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  /*padding: 80px;
+  margin-right: 35px;*/
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+}
+
+.download-content {
+  display: flex;
+  align-items: flex-start;
+  padding: 50px;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+}
+
+.download-video {
+  flex: 2;
+  margin-left: 30px;
+  padding-right: 60px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 180px;
+  margin-left: 90px;
+}
+
+.desktop-download,
+.mobile-download {
+  margin-bottom: 100px; /* Add margin between buttons */
+}
+
+.big-button {
+  background-color: #003333;
+  color: white;
+  padding: 30px;
+  padding-left: 90px;
+  padding-right: 90px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  width: 100%;
+  text-align: justify; /* Align the text to the right */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
+  font-weight: bold; /* Make the text bold */
+  font-size: 21px; /* Set the font size */
+}
+
+/* Style for the download icon */
+.big-button i {
+  position: absolute;
+  left: 35px; /* Adjust the left position of the icon */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.mobile-button {
+  background-color: #003333;
+  color: white;
+  padding: 30px;
+  padding-left: 110px;
+  padding-right: 88px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  width: 100%;
+  text-align: justify; /* Align the text to the right */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
+  font-size: 21px; /* Set the font size */
+}
+
+/* Style for the image in the mobile button */
+.mobile-button img {
+  margin-right: 10px; /* Adjust the space between icon and text */
+  height: 40px; /* Adjust the height of the image */
+  position: absolute;
+  left: 28px; /* Adjust the left position of the icon */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.big-button:hover,
+.mobile-button:hover {
+  background-color: #004d4d;
+}
+
+/* Add pointer cursor to the question */
+.question h2 {
+  cursor: pointer;
+  position: relative;
+  padding-left: 70px; /* Increased padding for a bit of space */
+  list-style: none; /* Hide default list-style dots */
+}
+
+/* Style the chevron icon */
+.question h2::before {
+  content: "\f054"; /* Unicode for chevron-right */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900; /* Adjust font weight if needed */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+
+/* Rotate the chevron icon for expanded questions */
+.question.active h2::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* Hide answers by default */
+.answer {
+  display: none;
+}
+
+/* Style for horizontal line */
+hr {
+  border: 0; /* Remove default border */
+  height: 1px; /* Set the height of the line */
+  background-color: #ddd; /* Line color */
+  margin: 20px 0; /* Add margin above and below the line */
+}
+    .Footer {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      background-color: #003333;
+      padding: 60px;
+      margin: -150px;
+
+    }
+
+    .footer-content {
+      text-align: left;
+      margin-left: -100px;
+      color: #fff;
+    }
+
+    .footer-content img {
+      margin: 0;
+      padding: 0;
+      display: block;
+      margin-left: 20PX;
+      margin-top: -50PX;
+
+    }
+
+    .icons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 20px; 
+    }
+
+    .icons a {
+      margin-bottom: 10px !important; /* Add space between icons */
+      color: #fff !important;
+      text-decoration: none;
+      font-size: 30px !important; 
+    }
+
+    .icons i {
+      margin-left: 20px;
+    }
+
+    .icons a:hover {
+      color: #00ff00;
+    }
+
+    .footer-content h4 {
+      font-size: 20px;
+    }
+
+    .footer-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-content li {
+      list-style-type: none;
+      margin-bottom: 10px;
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+    }
+
+    .footer-content a {
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+    }
+
+    .footer-content a:hover {
+      color: #8b0000;
+    }
+
+</style>
+</head>
+<body>
+ <header >
+  <nav>
+    <div class="logo  alt="FaceFrame Logo">
+    <a href="#"> <img src="C:\Users\Hp\Desktop\Faceframe AI\FACEFRAMELOGO.png" alt="Logo"></a>
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#more-info">More Info</a></li>
+        <li><a href="#support">Support</a></li>
+        <li><a href="#download">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<br><br><br>
+
+<section class="container">
+ <div class="slider-wrapper">
+    <div class="slider">
+      
+       <img id="slide-2" src="C:\Users\Hp\Desktop\Faceframe AI\Faceframe44.png"/>
+       <img id="slide-3" src="C:\Users\Hp\Desktop\Faceframe AI\slider3.png"/>
+       <img id="slide-1" src="C:\Users\Hp\Desktop\Faceframe AI\slider1.png"/>
+
+    </div>
+    <div class="slider-nav">
+       <a href="#slide-1"></a>
+       <a href="#slide-2"></a>
+       <a href="#slide-3"></a>
+       
+    </div>
+ </div>
+<br><br>
+ <p style="font-size: 1.5em; margin-top: 50px; margin-left: 140px;">   We make your workplace presence something that brings a smile to your face when you check in!</p>
+</section>
+</header>
+
+<br>
+<br>
+<br>
+
+<button onclick="scrollToTop()" id="myBtn" title="Go to top">Top</button>
+<script>
+// Function to display/hide scroll-to-top button on scroll
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  let mybutton = document.getElementById("myBtn");
+  if (
+    document.body.scrollTop > 20 ||
+    document.documentElement.scrollTop > 20
+  ) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// Function to scroll to the top of the page with smooth animation
+function scrollToTop() {
+  // Set a specific starting point, e.g., 50px from the top
+  const startingPoint = 50;
+
+  // Calculate the distance to the top
+  const distanceToTop = startingPoint - window.scrollY;
+
+  // If the current scroll position is close to the starting point, just scroll to the top
+  if (distanceToTop < 0 || distanceToTop > startingPoint) {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  } else {
+    // Otherwise, scroll to the starting point first
+    window.scrollTo({
+      top: startingPoint,
+      behavior: 'smooth',
+    });
+
+    // After a short delay, scroll to the top
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }, 300); // You can adjust the delay (in milliseconds) based on your preference
+  }
+}
+
+// Update the button click event to call scrollToTop
+document.getElementById("myBtn").addEventListener("click", scrollToTop);
+</script>
+
+<section id="download">
+  <div class="download-content" style="display: flex; align-items: flex-start;">
+    <div class="download-video">
+      <h2 style="font-size: 2.7em; margin-top: 0;">Download</h2>
+
+      <img src="C:\Users\Hp\Desktop\Faceframe AI\slider4.png""></img>
+      <br>
+      <br>
+<br>
+      <br><br>
+      <br>
+
+
+       <br>
+      <br> <br>
+      <br> 
+       <br>
+      <br> <br>
+      <br>
+    </div>
+        
+        
+    <div class="buttons">
+      <div class="desktop-download">
+        <a href="https://play.google.com/store/games?gl=US" class="big-button">
+          <i class="fa fa-download"></i>Download for Desktop</a>
+      </div>
+
+      <!--<br><br><br> -->
+
+      <div class="mobile-download">
+        <a href="https://play.google.com/store/games?gl=US" class="mobile-button">
+          <img src="C:\Users\Hp\Desktop\Faceframe AI\android.png" alt="Mobile Icon">Download for Android</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<hr class="section-line">
+<section id="more-info" class="section" style="margin-right: 100px;">
+  <div class="section-content">
+    <h2 style="font-size: 2.7em; margin-top: 0; margin-left: 65px;">More Info</h2>
+  </div>
+<div>
+  <img src="C:\Users\Hp\Desktop\Faceframe AI\FINAL.png" style="width: 200px; height: 400px; float: right; margin-right:50px; "> 
+<br>
+<br>
+ <p style="font-size: 20px; margin-left: 65px;">FaceFrame is an advanced application developed by a team of high school enthusiasts with a passion for technology<p style="font-size: 20px">  <p style="font-size: 20px; margin-left: 65px;"> and innovation. Stemming from a simple vision, this project was founded in 2023 and is still in progress.</p>
+
+</div>
+<br>
+
+<p style="font-size: 20px;  margin-left: 65px;">The journey was a fruitful challenge, where our team began to explore the possibilities of using facialrecognition </p> <p style="font-size: 20px; margin-left: 65px;"> technology to enhance performance and efficiency in employee attendance registration within a business.</p>
+<br>
+
+<p  style="font-size: 20px;  margin-left: 65px;"> We can say that FaceFrame will be an internationally renowned application that will change the paradigm of </p> <p style="font-size: 20px; margin-left: 65px;"> workplace attendance registration. With an innovative history and an unwavering commitment to quality and customer </p> <p style="font-size: 20px; margin-left: 65px;"> service, we aim to be leaders in the field of artificial intelligence and employee attendance management. FaceFrame is </p> <p style="font-size: 20px; margin-left: 65px;">more than an application - it's a reliable partner for all companies that value innovation and efficiency.</p>
+
+<br>
+<br>
+
+<br>
+<br><br>
+<br>
+<br>
+<br><br>
+<br>
+
+<p style="font-size: 50px; margin-top: 0; margin-right: 70px;"><b>Our mission and vision</b></p>
+<section id="about-us">
+
+   
+
+   <br>
+<div>
+ <img src="C:\Users\Hp\Desktop\Faceframe AI\faceee.jpeg" style="width: 750px; height: 450px; float:left; margin-right: 80px;"> 
+<br>
+
+<p style="font-size: 1.5em"><u> Mission:</u></P>
+<p style="font-size: 22px;"> Through the use of facial recognition technology, we are committed to providing innovative solutions for attendance recording, streamlining company processes,and increasing efficiency. Our mission is to transform how businesses monitor and manage their employees by integrating artificial intelligence for an enhanced and secure workplace experience.</P>
+
+
+<br>
+
+<p style="font-size: 1.5em"><u>Vision: </u></p> 
+<p style="font-size: 22px;">Revolutionizing workplace attendance recording, FaceFrame aims to be a global leader in the field of artificial intelligence, creating a secure and efficient environment for employee management.</p>
+</div>
+</section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+
+
+<br>
+<br>
+<section id="our-team" style="margin-right: 100px;">
+  <h3 style="font-size: 60px; margin-top: 0;">Why FaceFrame?</h3>
+
+<div class="Text-whyus" style="width: 300px; margin: 0 auto"></div>
+  
+<p style="font-family: Arial, sans-serif; font-size: 30px; line-height: 2; margin-bottom:0">
+
+Why FaceFrame? Because we've transformed the way a workday says, "Hello." Instead of sticking to outdated and time-consuming methods, choose us.</p>
+<br>
+<br>
+
+<p style="font-family: Arial, sans-serif; font-size: 23px; line-height: 1; margin-bottom:0">🚀 Effortless Automation: Forget paperwork! FaceFrame utilizes facial recognition technology to make check-in and check-out a breeze. No manual records, no hassle.</p>
+<br>
+
+<p style="font-family: Arial, sans-serif; font-size: 23px; line-height: 1; margin-bottom:0">🕒 Time is Money: We understand the value of time. With FaceFrame, invest your time where it matters— not in unnecessary procedures.</p>
+<br>
+
+<p style="font-family: Arial, sans-serif; font-size: 23px; line-height: 1; margin-bottom:0">🔒 Data Security: Your information is safeguarded. FaceFrame ensures high-level data protection, letting you focus on work, not security concerns.</p>
+<br>
+
+<p style="font-family: Arial, sans-serif; font-size: 23px; line-height: 1; margin-bottom:0">🌐 Versatility and Simplicity: Suitable for companies of all sizes. FaceFrame is adaptable and user-friendly. Boost efficiency without the complexity.</p>
+<br>
+
+<p style="font-family: Arial, sans-serif; font-size: 23px; line-height: 1; margin-bottom:0">💬 Support is Ready: No need to worry. Our support team is here for you. Help is just a message away.</p>
+<br>
+
+<p style="font-family: Arial, sans-serif; font-size: 23px; line-height: 1; margin-bottom:0">So, why FaceFrame? Because we make your workplace presence something that brings a smile to your face when you check in!😊</p>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</section>
+<section>
+   <br>
+
+    <div class="row">
+      <h1>Our Team</h1>
+    </div>
+
+    <div class="row">
+      <!-- Column 1-->
+      <div class="column">
+        <div class="card">
+          <div class="img-container">
+            <img src="C:\Users\Hp\Desktop\Faceframe AI\julia.png">
+          </div>
+          <h3>Julia Papathimiu</h3>
+          <p>Team Leader</p>
+          <div class="icons">
+            <a href="https://twitter.com/">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://mail.google.com/mail/u/0/#inbox">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2-->
+      <div class="column">
+        <div class="card">
+          <div class="img-container">
+            <img src="C:\Users\Hp\Desktop\Faceframe AI\dea.png">
+          </div>
+          <h3>Dea Memo</h3>
+          <p>Developer</p>
+          <div class="icons">
+            <a href="https://twitter.com/">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://mail.google.com/mail/u/0/#inbox">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 3-->
+      <div class="column">
+        <div class="card">
+          <div class="img-container">
+            <img src="C:\Users\Hp\Desktop\Faceframe AI\mei.png">
+          </div>
+          <h3>Mei Dallashi </h3>
+          <p>Developer</p>
+          <div class="icons">
+            <a href="https://twitter.com/">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://mail.google.com/mail/u/0/#inbox">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 4-->
+      <div class="column">
+        <div class="card">
+          <div class="img-container">
+            <img src="C:\Users\Hp\Desktop\Faceframe AI\teo.png">
+          </div>
+          <h3>Teo Spiri</h3>
+          <p>Developer</p>
+          <div class="icons">
+            <a href="https://twitter.com/">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://mail.google.com/mail/u/0/#inbox">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <br>
+<br><br><br><br><br>
+
+<hr class="section-line">
+<section id="support">
+  <div class="support-content">
+    <h2 style="font-size: 2.7em; margin-top: 0;">Support</h2>
+           <br><br>
+      <p style="font-family: Arial, sans-serif; font-size: 20px; line-height: 0; margin-bottom:0">
+
+  
+        Need help? We're here for you! Explore our FAQs below or reach out to our support team for assistance.
+
+      </p>
+       <br><br><br> <br>
+
+      <!--Question 1-->
+  <div class="question">
+    <h2 style="font-size: 1.5em;">Can Faceframe track employee attendance in real-time, and does it provide reporting or analytics features for management?</h2>
+      <p class="answer" style="font-size: 20px;"> Yes, Faceframe tracks employee attendance in real-time and provides comprehensive reporting and analytics features for management. Administrators can access attendance records, view trends, and generate reports to analyze employee attendance patterns.
+</p>
+  </div>
+
+<br>
+<br>
+
+      <!--Question 2-->
+  <div class="question">
+    <h2 style="font-size: 1.3em;">
+How does Faceframe handle situations where there are multiple employees in the frame during facial recognition?</h2>
+      <p class="answer" style="font-size: 20px;">Faceframe is equipped to handle scenarios where multiple employees are present in the frame during facial recognition. The system distinguishes between individuals and accurately identifies each employee based on their unique facial features.
+</p>
+  </div>
+
+<br>
+<br>
+
+      <!--Question 3-->
+  <div class="question">
+    <h2 style="font-size: 1.3em;">
+Is Faceframe compatible with different types of cameras or devices for facial recognition, or does it require specific hardware?</h2>
+      <p class="answer" style="font-size: 20px;"> Faceframe is designed to be compatible with various types of cameras and devices for facial recognition. While specific hardware requirements may vary, the software can be configured to work with a wide range of camera setups, including built-in webcams, IP cameras, and dedicated facial recognition devices.
+</p>
+  </div>
+
+<br>
+<br>
+
+      <!--Question 4-->
+  <div class="question">
+    <h2 style="font-size: 1.3em;">
+Can Faceframe detect and prevent spoofing attempts, such as using photos or videos to trick the facial recognition system?</h2>
+      <p class="answer"style="font-size: 20px;">Faceframe incorporates advanced anti-spoofing techniques to detect and prevent spoofing attempts. These techniques include liveness detection algorithms that analyze facial movements and behavior to ensure that the person being scanned is live and not a static image or video.</p>
+  </div>
+
+<br>
+<br>
+
+      <!--Question 5-->
+
+  <div class="question">
+    <h2 style="font-size: 1.3em;">
+Does Faceframe support facial recognition for users wearing masks or other facial coverings?</h2>
+      <p class="answer"style="font-size: 20px;">Faceframe can adapt to recognize individuals wearing masks or other facial coverings. The system leverages advanced facial recognition algorithms that are trained to detect and analyze facial features even when parts of the face are obscured. </p></div>
+
+<br>
+<br>
+
+      <!--Question 6-->
+
+  <div class="question">
+    <h2 style="font-size: 1.3em;">
+How does Faceframe handle scenarios where employees may have disabilities or facial differences that affect facial recognition accuracy?</h2>
+      <p class="answer"style="font-size: 20px;">Faceframe is designed to be inclusive and accommodating to individuals with disabilities or facial differences that may affect facial recognition accuracy. The system can be customized to adjust recognition thresholds or accommodate alternative authentication methods to ensure accessibility for all users.</p>
+  </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const questions = document.querySelectorAll(".question");
+
+    questions.forEach((question) => {
+    question.addEventListener("click", () => {
+      question.classList.toggle("active");
+        const answer = question.querySelector(".answer");
+        answer.style.display = answer.style.display === "block" ? "none" : "block";
+          });
+      });
+  });
+</script>
+
+<br><br><br><br><br><br><br><br><br><br>
+
+<!-- FOOTER -->
+
+<footer>
+ <footer>
+    <section class="Footer">
+      <div class="footer-content">
+       <a href=""> <img src="C:\Users\Hp\Desktop\Faceframe AI\FACEFRAMELOGO.png" alt="FACEFRAME" height="150PX"></a>
+        <div class="icons">
+        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/?hl=en"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      </div>
+      
+      <div class="footer-content">
+        <h4>Who we are</h4>
+        <li><a href="#more-info">More Info</a></li>
+        <li><a href="#about-us">Mission</a></li>
+        <li><a href="#about-us">Vision</a></li>
+      </div>
+      <div class="footer-content">
+        <h4>Need help?</h4>
+        <li><a href="#support">Support</a></li>
+        <li><a href="#our-team">Our Team</a></li>
+        <li><a href="#support">FAQs</a></li>
+        
+      </div>
+      <div class="footer-content">
+        <h4>Use Faceframe</h4>
+        <li><a href="">Home</a></li>
+          <li><a href="#download" class="Button-download">
+            <i class="fa fa-download"></i>Download
+          </a>
+        </li>
+      
+
+      </div>
+    </section>
+</footer>
+
+
+
+                   
+</body>
